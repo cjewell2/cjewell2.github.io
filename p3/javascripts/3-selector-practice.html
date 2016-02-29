@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>1. CSS Selector Practice</title>
+</head>
+<body>
+    <h1>CSS Selector Practice, Ex. 1</h1>
+    <h2 class="important">Hi again</h2>
+    <p class="a">Random unattached paragraph</p>
+    <div class="relevant">
+        <p class="a">first</p>
+        <p class="second">second</p>
+        <p>third</p>
+        <p class="fourth">fourth</p>
+        <p class="a">fifth</p>
+        <p class="a">sixth</p>
+        <p>seventh</p>
+    </div>
+
+     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+     <script>
+
+    var main = function () {
+        "use strict";
+        //1. Select the <h1> element
+        $(".relevant" ).css("color", "Red");
+    };
+
+    $(document).ready(main);
+</script>
+</body>
+</html>
