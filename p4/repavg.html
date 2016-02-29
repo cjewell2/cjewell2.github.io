@@ -1,0 +1,41 @@
+<!doctype html>
+
+
+<html>
+ <head>
+   <title> Average Roll </title>
+   <script src="../js/random.js"></script>
+   
+   <script>
+     function average(){ 
+       
+       var rollSum, counter, rollNum, roll1, roll2;
+       
+       rollSum = 0;
+       counter = 0;
+       rollNum = parseFloat(document.getElementById('numBox').value);
+
+       
+       while (counter < rollNum) {
+	       roll1 = RandomInt(1, 6);
+	       roll2 = RandomInt(1, 6);
+	       rollSum = rollSum + roll1 + roll2;
+	       counter ++; 
+       }
+     
+       average = rollSum / counter;
+       document.getElementById('avgRoll').innerHTML = average;  
+     }
+   </script>
+ </head>
+
+ <body>
+   <h2>Average Roll</h2>
+        <p>Number of Rolls: <input type="text" id="numBox" size=6 value=1000></p>
+        <input type="button" value="Roll" onclick="average();">    
+   <hr>
+   		<br>
+   
+   <div>Average Roll: <span id="avgRoll">0</span></div>
+ </body>
+</html>

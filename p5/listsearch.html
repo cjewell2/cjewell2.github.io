@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+ <head>
+   <title>Word Search </title>
+   <script src="../js/arrays.js"></script>
+   <script>
+   	function find() {
+   		
+   		var searchWord = document.getElementById('wordBox').value;
+   		var rawWordText = document.getElementById('arrayBox').value;
+   		var arrayOfWords = rawWordText.split(' ');
+   		var result = SeqSearch(arrayOfWords, searchWord);
+   		
+   		document.getElementById('outputDiv').innerHTML = 'Result of Search: ' + result;
+   	}
+   </script>
+ </head>
+
+ <body>
+   <h2>Word Search</h2>
+   <p>
+     Enter words separated by spaces: <input type="text" id="arrayBox" size=30 value="car book house plate truck">
+     <br>
+     Desired Word: <input type="text" id="wordBox" size=20 value="truck">
+   </p>   
+   <input type="button" value="Search" 
+          onclick="find();">
+   <hr>
+   <div id="outputDiv"></div>
+ </body>
+</html>

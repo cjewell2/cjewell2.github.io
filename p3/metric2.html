@@ -1,0 +1,75 @@
+<!doctype html>
+<!-- metric.html                                           Dave Reed -->
+<!-- This page converts between English and Metric measurements.     -->
+<!-- =============================================================== -->
+
+<html>
+ <head>
+   <title>Metric Conversion</title>
+   <script type="text/javascript" src="convert.js"></script>
+   <script type="text/javascript">
+     function ConvertToCm()
+     // Assumes: inchBox contains a distance in inches
+     // Results: displays the distance in centimeters in outputDiv
+      {
+       var inches, cm;
+       
+       inches = parseFloat(document.getElementById('inchBox').value);
+       cm = InchesToCentimeters(inches);
+       document.getElementById('outputDiv1').innerHTML = 
+         'That is ' + cm + ' centimeters.';
+     }
+      
+     function ConvertToInch()
+     // Assumes: inchBox contains a distance in inches
+     // Results: displays the distance in centimeters in outputDiv
+      {
+       var inches, cm;
+       
+       cm = parseFloat(document.getElementById('centBox').value);
+       inches = CentimetersToInches(cm);
+       document.getElementById('outputDiv2').innerHTML = 
+         'That is ' + inches + ' inches.';
+     }
+     
+	function CentimetersToInches(cm){
+		var inches;
+		inches = cm / 2.54;
+		return inches;
+	}
+
+	function InchesToCentimeters(inches)
+// Assumes: inches is a distance, measured in inches
+	// Returns: the corresponding distance in centimeters
+	{
+		var cm;
+		
+		cm = inches * 2.54;
+		return cm;
+	}
+   </script>
+ </head>
+ 
+ <body>
+   <p>Length in inches:
+      <input type="text" id="inchBox" size=6 value=1>
+      <input type="button" value="Convert to Centimeters"
+             onclick="ConvertToCm();">
+   </p>
+   <hr>
+   <div id="outputDiv1">
+   
+   	
+   </div>
+   <p>Length in cm:
+      <input type="text" id="centBox" size=6 value=1>
+      <input type="button" value="Convert to Centimeters"
+             onclick="ConvertToInch()">
+   </p>
+   <hr>
+   <div id="outputDiv2">
+   
+   	
+   </div>
+ </body>
+</html> 

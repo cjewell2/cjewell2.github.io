@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Dotrace</title>
+  <script>
+  
+  redScore = 0
+  blueScore = 0
+  
+  function race() {
+  	length=parseFloat(document.getElementById('raceLength').value);
+  	blueStep=Math.floor((Math.random()*3)+1);
+  	blueScore += blueStep;
+  	document.getElementById('blueScore').innerHTML=blueScore;
+  	
+  	redStep=Math.floor((Math.random()*3)+1);
+  	redScore += redStep;
+  	document.getElementById('redScore').innerHTML=redScore;
+  	
+  	if(redScore>=length && blueScore<=length) {
+  		alert('Red Wins!')}
+  	else if(blueScore>=length && redScore<=length) {
+  		alert('Blue Wins!')}
+  	else if(blueScore>=length && redScore>=length) {
+  		alert('Its a Tie!')}
+  }
+  
+  
+  </script>
+ 
+</head>
+
+<body>
+	<h1>Online Dot Race</h1>
+<div>
+Race Length:
+	<input type="text" id="raceLength" size="10" value="20">
+
+</div>
+
+<div>
+	<p>
+	Red Dot: <span id="redScore">0</span>		
+	<br>	
+	Blue Dot: <span id="blueScore">0</span>
+	</p>
+</div>
+
+<div>
+<input type="button" value="Take a Step!" onclick="race()">
+
+</div>
+
+  
+</body>
+
+</html>

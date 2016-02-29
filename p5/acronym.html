@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+ <head>  
+   <title>Acronym Generator</title> 
+   
+   <script src="../js/arrays.js"></script>
+   <script>
+   	function generate() {
+   		var theAcronym = Acronym(document.getElementById('phraseBox').value);
+   		
+   		document.getElementById('outputDiv').innerHTML = 'The acronym is: ' + theAcronym;
+   	}
+   </script>
+
+ </head> 
+
+ <body> 
+   <h2>Acronym Generator</h2>  
+   <p>
+      Enter a phrase: <input type="text" id="phraseBox" size="20"
+      value="Monkey See Monkey Do"> <br>
+   </p>
+   <input type="button" value="Generate Acronym" onclick="generate();">                   
+   <hr>
+   <div id="outputDiv"></div>
+ </body>
+</html>

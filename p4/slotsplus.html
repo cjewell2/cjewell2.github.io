@@ -1,0 +1,67 @@
+<!doctype html> 
+<!-- slots.html                                    Dave Reed -->
+<!-- This page simulates a simple slot machine with 3 slots. -->
+<!-- ======================================================= -->
+
+<html>
+ <head>
+   <title> Slot Machine </title>
+   <script type="text/javascript" src="http://balance3e.com/random.js">
+   </script>
+   <script type="text/javascript">
+   	var credits = 20
+     function SpinSlots()
+     // Assumes: slot images are in http://balance3e.com/Images
+     // Results: displays 3 random slot images
+     {
+     	if (credits <= 0){
+     		return
+     	}
+       var slot1, slot2, slot3;
+       credits += -1
+       
+       slot1 = RandomOneOf(['lemon', 'cherry', 'bar', 'donut']);
+       slot2 = RandomOneOf(['lemon', 'cherry', 'bar', 'donut']);
+       slot3 = RandomOneOf(['lemon', 'cherry', 'bar', 'donut']);
+       
+       document.getElementById('slot1Img').src = 
+         'http://balance3e.com/Images/' + slot1 + '.jpg';
+       document.getElementById('slot2Img').src = 
+         'http://balance3e.com/Images/' + slot2 + '.jpg';
+       document.getElementById('slot3Img').src = 
+         'http://balance3e.com/Images/' + slot3 + '.jpg';
+         
+       if (slot1 == slot2){
+       	if (slot2 == slot3){
+       	  credits += 12
+        }
+       }  
+       
+       document.getElementById('credit').innerHTML = credits
+       
+     }
+   </script>
+ </head>
+
+ <body>
+   <div style="text-align:center"> 
+     <p>
+       <img id="slot1Img" border=1 alt="slot image"
+            src="http://balance3e.com/Images/cherry.jpg">
+       <img id="slot2Img" border=1 alt="slot image"
+            src="http://balance3e.com/Images/lemon.jpg">
+       <img id="slot3Img" border=1 alt="slot image"
+            src="http://balance3e.com/Images/bar.jpg">
+     </p>
+     <input type="button" value="Click to Spin" onclick="SpinSlots();">
+   </div>
+   <hr>
+   <div style="text-align:center">
+   <p>
+   	Available Credits: 	
+   </p>
+   <div id="credit">
+   	20
+   </div>
+ </body>
+</html>

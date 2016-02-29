@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+ <head>  
+   <title>Pizza Cost Calculator</title> 
+   <script>
+     function calculate() {
+     	
+     	var p;
+     	var x;
+     	var n;
+     	x = document.getElementById('diameterBox').value;
+     	n = document.getElementById('priceBox').value;
+     	p = n/(Math.PI * (Math.pow(x,2)/2)); 
+     	
+     	
+     	
+     	document.getElementById('outputDiv').innerHTML = 
+         'The price per square inch for this pizza is $' + p;
+         
+     	
+     }      
+   </script>
+ </head> 
+
+ <body> 
+   <h2>Pizza Cost Calculator</h2>  
+   <p>
+      Diamater: <input type="text" id="diameterBox" size=10 value=""> (inches) <br>
+      Price: <input type="text" id="priceBox" size=10 value=""> (dollars)
+   </p>
+   <input type="button" value="Calculate Price" onclick="calculate();">                   
+   <hr>
+   <div id="outputDiv"></div>
+ </body>
+ 
+<script>
+         document.write('<p>location: ' + document.URL + '</p>');
+</script>
+</html>

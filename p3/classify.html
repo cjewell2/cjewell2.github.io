@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Analysis</title>
+  <script>
+  function classify()
+  {
+  		var n;
+  		n=parseFloat(document.getElementById('numBox').value);
+  		if (n==0) {
+  		document.getElementById('outputDiv').innerHTML='Zero';}
+  		else if (n>0) { 
+  		document.getElementById('outputDiv').innerHTML='Positive';}
+ 		else if (n<0) {
+  		document.getElementById('outputDiv').innerHTML='Negative';}
+  }
+  
+  </script>
+ 
+</head>
+
+<body>
+<div>
+Enter a number:
+<input type="text" id="numBox" size="10">
+<input type="button" value="Classify" onclick="classify();">
+</div>
+<hr>
+<div id="outputDiv">
+	
+</div>  
+</body>
+
+</html>

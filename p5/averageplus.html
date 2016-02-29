@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- average.html                                 Dave Reed -->
+<!-- This page utilizes the arrays.js library file to store -->
+<!-- an array of numbers and compute their average.         -->
+<!-- ====================================================== -->
+
+<html>
+ <head>
+   <title> Average Numbers </title>
+   <script type="text/javascript" src="../js/arrays.js"></script>
+   <script type="text/javascript">
+     function ShowAvg()
+     // Assumes: numsBox contains a sequence of numbers
+     // Results: displays the average of the numbers in outputDiv
+     {
+       var str, strArray, numArray;
+
+       str = document.getElementById('numsBox').value;
+       if(str ==""){
+       	alert('Oops! No Data!')
+       	document.getElementById('outputDiv').innerHTML = 'The average is 0'
+       	return
+       	
+       }
+       strArray = str.split(/[, \t\n]+/);   // SPLIT STRING INTO AN ARRAY
+       numArray = ParseArray(strArray);     // STORE ARRAY VALUES AS NUMS
+       
+       document.getElementById('outputDiv').innerHTML = 
+           'The average of [' + numArray + '] is ' + Average(numArray); 
+     }
+   </script>
+ </head>
+
+ <body>
+   <p>
+   Enter numbers: <input type="text" id="numsBox" size=40 value="">
+   </p>
+   <p>
+   <input type="button" value="Compute the Average" onclick="ShowAvg();">
+   </p>
+   <div id="outputDiv"></div>
+ </body>
+</html>

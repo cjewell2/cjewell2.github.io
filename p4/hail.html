@@ -1,0 +1,51 @@
+<!doctype html>
+
+
+<html>
+ <head>
+   <title> Hailstone Sequence </title>
+   <script>     
+     function hailstone() {
+     	
+        var number, counter;
+       
+       number = parseFloat(document.getElementById('numBox').value);
+       counter = 0;
+       while (number > 1){
+       	if (number % 2 == 0){
+       		number = number/2;
+       		document.getElementById('outputDiv').innerHTML = document.getElementById('outputDiv').innerHTML + '<br>' + number;
+       		counter ++;
+       		}
+       	else {
+       		number = number * 3 + 1;
+       		document.getElementById('outputDiv').innerHTML = document.getElementById('outputDiv').innerHTML + '<br>' + number;
+       		counter ++;
+       		}
+       	if (number == 1){
+       		document.getElementById('outputDiv').innerHTML = document.getElementById('outputDiv').innerHTML + '<br>' + 'STUCK!';
+       		document.getElementById('counter').innerHTML = counter;
+       		break;
+       		}
+       	}
+     }
+   </script>
+ </head>
+
+ <body>
+ 	<div style="text-align:center">
+   <h2>Hailstone Sequence</h2>
+   <td>
+      <tr>
+        Initial Integer: <input type="text" id="numBox" size=6 value=5>
+      </tr>
+      <tr>
+       <input type="button" value="Generate" onclick="hailstone();">
+      </tr>
+   </td>    
+   <hr>
+   <div id="outputDiv"></div>
+   <p>Hailstone sequence length: <span id="counter">0</span></p>
+  </div>
+ </body>
+</html>

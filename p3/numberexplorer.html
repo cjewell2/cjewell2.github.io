@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Number Explorer</title>
+		<script>
+		function numberSquare()
+		{
+			var x;
+			x=parseFloat(document.getElementById('numBox').value);
+			document.getElementById('numSquared').innerHTML=Math.pow(x,2);
+		}
+		function numberSqrt() 
+		{
+			var x;
+			x=parseFloat(document.getElementById('numBox').value);	
+			document.getElementById('numSqrt').innerHTML=Math.sqrt(x);
+		}
+		</script>
+	</head>
+	
+	<body>
+		<h2>Number Explorer</h2>
+		<p>Number to Explore:
+			<input type="text" id="numBox" size="10" value="0"> 
+			<input type="button" value="Explore" onclick="numberSquare(); numberSqrt();"> 
+		</p>
+		<hr>
+		
+		<p>Number Squared: <span id="numSquared">0</span></p>
+		<p>Square Root: <span id="numSqrt">0</span></p>
+	</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html> 
+
+
+<html>
+ <head>
+   <title> ESP Test </title>
+   <script type="text/javascript" src="../js/random.js"></script>
+   <script type="text/javascript">
+   
+   	 correctCount = 0; 
+     counter = 0  
+     
+     function randomImg(guess){
+       var image;
+       
+       image = RandomOneOf(['square', 'triangle', 'circle', 'star']);
+    	if(image == guess){
+    		correctCount ++ ;
+    	}
+        document.getElementById('Image').src = 
+          '../images/' + image + '.gif';
+         
+        counter ++ ;
+        document.getElementById('perCorrect').innerHTML = (correctCount/counter).toFixed(3);
+        document.getElementById('count').innerHTML = counter;
+        document.getElementById('numCorrect').innerHTML = correctCount;
+     }
+   </script> 
+   
+   
+  
+ </head>
+
+ <body>
+ 	<div style="text-align:center" >
+ 		<h1>ESP Test</h1>
+ 		<h2>Measure your Extrasensory Perception</h2>
+ 		<p>The card below hides the image of a squre, triangle, circle, or star.<br>
+ 			Concentrate on the hiden image, then click on the corresponding button
+ 			to make your guess.</p>
+ 			<br>
+ 		<p>Statistics showing the number and percentage of correct guesses will appear
+ 			in the boxes.</p>
+ 			<hr>
+ 	</div>
+ 	<div style="text-align:center">
+ 	<input type="button" value="Square" onclick="randomImg('square');">
+     <input type="button" value="Triangle" onclick="randomImg('triangle');">
+     <input type="button" value="Circle" onclick="randomImg('circle');">
+     <input type="button" value="Star" onclick="randomImg('star');">
+     </div>
+     
+     <div style="text-align:center"> 
+       <p>
+         <img id="Image" border=2 src="../images/mystery.gif">
+       </p>
+     </div>
+     
+     <div id="outputDiv" style="text-align:center">
+     	<p> You have guessed correctly <span id="numCorrect">0</span> 
+     	                     out of <span id="count">0</span> times.</p>
+     	                 <p>That means you were correct <span id="perCorrect">0</span>% of the time.</p>    
+     </div>
+
+ </body>
+</html>
