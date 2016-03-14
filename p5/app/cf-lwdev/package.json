@@ -1,0 +1,14 @@
+{
+  "name": "cjewell2-app1",
+  "description": "a simple test app",
+  "dependencies": {
+
+  },
+  "scripts": {
+    "start": "node server-demo.js"
+  },
+  "version": "0.0.0",
+  "main": "server-demo.js",
+  "author": "",
+  "license": "ISC"
+}

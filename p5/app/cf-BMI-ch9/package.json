@@ -1,0 +1,14 @@
+{
+  "name": "cjewell2BMIch9",
+  "description": "Express-powered BMI App",
+  "dependencies": {
+    "express": "3.4.x"
+  },
+  "scripts": {
+    "start": "node app-server.js"
+  },
+  "version": "0.0.0",
+  "main": "app-server.js",
+  "author": "mh",
+  "license": "ISC"
+}
